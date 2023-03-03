@@ -1,0 +1,15 @@
+version: "3"
+services:
+  workspace:
+    image: python:3
+    container_name: sqs_redrive_workspace
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /workspace
+    environment:
+      AWS_DEFAULT_REGION: ap-northeast-1
+    command: >
+      bash
+    volumes:
+      - .:/workspace
